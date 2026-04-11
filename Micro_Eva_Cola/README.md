@@ -62,6 +62,7 @@ Ingrese valor: 10
 
 ## 📊 Diagrama (Mermaid)
 
+```mermaid
 flowchart LR
     A[Inicio] --> B[Menú]
     B --> C{Opción}
@@ -76,6 +77,7 @@ flowchart LR
     E --> B
     F --> B
     G --> B
+```
 
 ## 🚀 Conclusión
 Este proyecto permite entender cómo funciona una cola en programación, aplicando operaciones básicas y reforzando conceptos fundamentales de estructuras de datos.
