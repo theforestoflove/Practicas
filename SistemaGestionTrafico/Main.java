@@ -34,7 +34,34 @@ public class Main {
             historial.agregar(procesado.ipOrigen);
         }
 
+
         historial.recorrerAdelante();
         historial.recorrerAtras();
+
+        CacheSeguridad cache = new CacheSeguridad();
+
+        cache.agregarIP("192.168.1.1");
+        cache.agregarIP("8.8.8.8");
+        cache.agregarIP("1.1.1.1");
+
+        cache.mostrarIPs();
+
+        String busqueda = "8.8.8.8";
+
+        System.out.println("\nBuscando IP: " + busqueda);
+
+        if (cache.esSegura(busqueda)) {
+            System.out.println("La IP es SEGURA");
+        } else {
+            System.out.println("La IP NO es segura");
+        }
+
+        System.out.println("\n=== LIMPIEZA DE SEGURIDAD ===");
+
+        cache.eliminarIPSegura("192.168.1.1", historial);
+
+        System.out.println("\nHistorial actualizado:");
+
+        historial.recorrerAdelante();
     }
 }

@@ -30,6 +30,7 @@ public class HistorialIP {
     private void eliminarAntiguo() {
 
         if (head != null) {
+
             head = head.next;
 
             if (head != null) {
@@ -37,6 +38,38 @@ public class HistorialIP {
             }
 
             size--;
+        }
+    }
+
+    public void eliminarIP(String ip) {
+
+        Nodo actual = head;
+
+        while (actual != null) {
+
+            if (actual.ip.equals(ip)) {
+
+                // Nodo intermedio
+                if (actual.prev != null) {
+                    actual.prev.next = actual.next;
+                } else {
+                    head = actual.next;
+                }
+
+                // Nodo siguiente
+                if (actual.next != null) {
+                    actual.next.prev = actual.prev;
+                } else {
+                    tail = actual.prev;
+                }
+
+                size--;
+
+                System.out.println("IP eliminada del historial: " + ip);
+                return;
+            }
+
+            actual = actual.next;
         }
     }
 
